@@ -59,9 +59,9 @@ window.HUB_EVENTS = {
   timeOfFirstCallToShouldStopLoop: 0,
   _loopExits: {},
   _loopTimers: {},
-  START_MONITORING_AFTER: 2000,
-  STOP_ALL_MONITORING_TIMEOUT: 5000,
-  MAX_TIME_IN_LOOP_WO_EXIT: 2200,
+  START_MONITORING_AFTER: 20,
+  STOP_ALL_MONITORING_TIMEOUT: 50,
+  MAX_TIME_IN_LOOP_WO_EXIT: 22,
   gameStartTime: 300,
   exitedLoop: function (E) {
     this._loopExits[E] = true;

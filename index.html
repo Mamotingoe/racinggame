@@ -19,6 +19,10 @@
         font-smooth: never;
         height: 98vh;
       }
+      .popup.style{
+        margin-bottom: auto;
+        position: sticky;
+      }
 
       /* UI */
       .topUI {
@@ -224,7 +228,7 @@
       </div>
 
       <div id="hud">
-        <span id="time" class="topUI">0</span>
+        <span id="time" class="topUI">20</span>
         <span id="score" class="topUI">0</span>
         <span id="lap" class="topUI">0'00"000</span>
         <span id="tacho">0</span>
@@ -241,10 +245,11 @@
     <div id="controls">
       <span><span>P</span>points</span>
       <span><span>C</span>play</span>
+      <span><span>E</span>exit</span>
       <span><span>M</span>mute</span>
       <span><span>&lt;</span><span>&gt;</span>move</span>
       <span><span>&lt;</span><span>&gt;</span>accelerate</span>
-      <span><span>E</span>exit</span>
+
     </div>
     <script src="javascript/1.js"></script>
 
@@ -414,6 +419,47 @@
           openPointsTally();
         }
       });
+      addEventListener("keydown", function (e) {
+  if (e.code === "KeyE" && inGame) {
+    e.preventDefault();
+
+    // Calculate the final score and points based on game logic
+    // For example, you can use the 'scoreVal' variable to calculate the score
+    const finalScore = Math.floor(scoreVal);
+    const pointsToAdd = Math.floor(finalScore / 1000) * 10;
+
+    // Add the points to the total
+    points += pointsToAdd;
+
+    // Display a pop-up dialog with the score and points
+    const popup = document.createElement("div");
+    popup.innerHTML = `
+      <p>Your Score: ${finalScore}</p>
+      <p>Points Earned: ${pointsToAdd}</p>
+      <p>Total Points: ${points}</p>
+      <button id="redeemButton">Redeem Points</button>
+      <button id="continueButton">Continue Playing</button>
+    `;
+    popup.style.backgroundColor = "#fff";
+    popup.style.padding = "40px";
+    popup.style.borderRadius = "10px";
+    popup.style.textAlign = "center";
+    popup.style.position = "absolute";
+    // popup.style.display = "flex";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%, -50%)";
+    document.body.appendChild(popup);
+
+
+    // Add an event listener to the "Continue Playing" button
+    const continueButton = document.getElementById("continueButton");
+    continueButton.addEventListener("click", () => {
+      // Close the pop-up dialog and continue playing
+      document.body.removeChild(popup);
+    });
+  }
+});
 
 
       // Countdown timer variables

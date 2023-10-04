@@ -1,0 +1,132 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700");
+@import url("https://use.fontawesome.com/releases/v6.1.2/css/all.css");
+
+/* Components */
+@import url("components/navbar.css");
+@import url("components/avatar.css");
+@import url("components/notification.css");
+@import url("components/tabs.css");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.logo{
+  border-radius: 10%;
+  height: 7%;
+  width: 7%;
+  
+}
+.rounded-logo {
+  width: 100px; 
+   height: auto; 
+   border-radius: 100%;
+ }
+.container {
+  max-width: 900px;
+  margin: 24px auto;
+}
+.wrapper {
+  max-width: 75%;
+  /*margin: auto;*/
+  margin-top: 30px;
+}
+
+.team_container {
+  margin-top: 100px; /* Adjust the margin as needed to separate it from the navbar */
+}
+.wrapper > p,
+.wrapper > h1 {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.wrapper > h1 {
+  letter-spacing: 3px;
+}
+
+.accordion {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.accordion i {
+  font-size: 1.6rem;
+  background-color: white;
+}
+.active,
+.accordion, i:hover {
+  background-color: #f1f7f5;
+}
+.active,
+.accordion:hover {
+  background-color: #f1f7f5;
+}
+.pannel {
+  padding: 0 2rem 2.5rem 2rem;
+  background-color: #f1f7f5;
+  overflow: hidden;
+  background-color: #f1f7f5;
+  display: none;
+}
+.pannel p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.faq {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+}
+.faq.active {
+  border: none;
+}
+
+
+/* Remove background color for active accordion */
+.active {
+  background-color: transparent;
+}
+/* Apply CSS styles to the bullet paragraph */
+
+
+
+/* Style the accordion */
+.accordion {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Add a class to style the active accordion */
+.active-accordion {
+  background-color: #f1f7f5; /* Set the background color for the active accordion */
+}
+/* Apply CSS styles to the bullet paragraph */
+

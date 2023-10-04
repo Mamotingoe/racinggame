@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+
+    <div class="navbar-lewagon">
+      <img src="images/logo.png" alt="logo" class="rounded-logo">
+    </div>
+
+    <div class="container">
+      <!-- Code your tabs here -->
+      <div class="tabs">
+        <a href="C:\Users\eucal\Downloads\04-Activity-feed\activity\index.html" class="tab">Recent Transactions</a>
+        <div class="button">
+          <a href="C:\Users\eucal\Downloads\04-Activity-feed\activity\Active\index.html" class="tab">Active</a>
+        </div>
+        <div class="button">
+          <a href="" class="tab active">FAQs</a>
+        </div>
+      </div>
+
+  <div class="team_container">
+    <div class="wrapper">
+      
+      <h1>Frequently Asked Questions</h1>
+
+      <div class="faq">
+        <button class="accordion">
+          How can i open an african Bank investment Account?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Account can be opened online.</br>
+            At your nearest African Bank Branch.</br>
+            Through our investment Contact Centre at 0860 49 49 40.</br>
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          When can i apply for new credit card?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            If you do not have an African Bank credit card, you can apply in any of the following ways:
+
+            Online on www.africanbank.co.za, using our African Bank App, dialling our call centre on 0860 333 004 or by visiting any of our African Bank branches.  
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          What is African Bank doing with personal information?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            South African banks, including African Bank, take the security of their customer data very seriously and have put in place robust risk mitigation strategies to detect potential fraud on accounts and protect customers’ personal information.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          Where will the campaign temrs and conditions be published?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            The promotional terms and conditions will be published on the closed usage MyWORLD campaign page on the website.
+          </p>
+        </div>
+      </div>
+     
+      <div class="faq">
+        <button class="accordion">
+          What are the fees for pay@?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            A low cash deposit fee of R5 for any deposit up to R1000, OR pay just 1.75% of the total value of any deposit over  R1000. For any payments made by card, the fee is 2.75% of the   total value.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          this.parentElement.classList.toggle("active");
+
+          var pannel = this.nextElementSibling;
+
+          if (pannel.style.display === "block") {
+            pannel.style.display = "none";
+          } else {
+            pannel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

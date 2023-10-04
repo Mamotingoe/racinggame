@@ -378,7 +378,7 @@
         const popup = document.createElement("div");
         popup.innerHTML = `
           <p>You earned ${pointsToAdd} points! Total points: ${points}</p>
-          <button id="redeemButton">Redeem Points</button>
+          <a href="/home/mamotingoe/code/Mamotingoe/Group-3/racinggame/04-Activity-feed/activity/index.html"><button id="redeemButton">Redeem Points</button></a>
           <button id="continueButton">Continue Playing</button>
         `;
         popup.style.backgroundColor = "#fff";
@@ -412,13 +412,45 @@
         alert(`You earned ${pointsToAdd} points! Total points: ${points}`);
       }
 
-      // Event listener for the "P" key
-      addEventListener("keydown", function (e) {
-        if (e.code === "KeyP") {
-          e.preventDefault();
-          openPointsTally();
+   // Function to handle the pop-up
+   function showPopup() {
+            const popup = document.createElement("div");
+            popup.innerHTML = `
+                <p>Create an African Bank MyWorld account for an extra 1000 points</p>
+                <button id="closeButton">Close</button>
+                <a href="/home/mamotingoe/code/Mamotingoe/Group-3/racinggame/04-Activity-feed/activity/index.html"><button id="redeemButton">Redeem Points</button></a>
+          <button id="continueButton">Continue Playing</button>
+            `;
+            popup.style.backgroundColor = "#fff";
+            popup.style.padding = "20px";
+            popup.style.borderRadius = "10px";
+            popup.style.textAlign = "center";
+            popup.style.position = "absolute";
+            popup.style.top = "50%";
+            popup.style.left = "50%";
+            popup.style.transform = "translate(-50%, -50%)";
+            document.body.appendChild(popup);
+
+            // Add event listener to the close button
+            const closeButton = document.getElementById("closeButton");
+            closeButton.addEventListener("click", () => {
+                // Close the pop-up
+                document.body.removeChild(popup);
+            });
+            const continueButton = document.getElementById("continueButton");
+continueButton.addEventListener("click", () => {
+  // Close the pop-up dialog
+  document.body.removeChild(popup);
+            });
         }
-      });
+
+        // Event listener for the "P" key
+        document.addEventListener("keydown", function (e) {
+            if (e.code === "KeyP") {
+                e.preventDefault();
+                showPopup();
+            }
+        });
       addEventListener("keydown", function (e) {
   if (e.code === "KeyE" && inGame) {
     e.preventDefault();
@@ -437,7 +469,7 @@
       <p>Your Score: ${finalScore}</p>
       <p>Points Earned: ${pointsToAdd}</p>
       <p>Total Points: ${points}</p>
-      <button id="redeemButton">Redeem Points</button>
+      <a href="/home/mamotingoe/code/Mamotingoe/Group-3/racinggame/04-Activity-feed/activity/index.html"><button id="redeemButton">Redeem Points</button></a>
       <button id="continueButton">Continue Playing</button>
     `;
     popup.style.backgroundColor = "#fff";

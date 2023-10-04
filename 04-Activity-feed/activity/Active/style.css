@@ -1,0 +1,306 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700");
+@import url("https://use.fontawesome.com/releases/v6.1.2/css/all.css");
+
+/* Components */
+@import url("components/navbar.css");
+@import url("components/avatar.css");
+@import url("components/notification.css");
+@import url("components/tabs.css");
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+
+body {
+ 
+  
+  margin: 0;
+  margin-bottom: 100px;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  background-color: #f7f7f7;
+}
+/* Add a class to style the rounded logo */
+/* Add a class to style the rounded logo */
+.rounded-logo {
+ width: 100px; 
+  height: auto; 
+  border-radius: 100%;
+}
+
+
+
+.container {
+  max-width: 900px;
+  margin: 24px auto;
+}
+
+.wrapper {
+  margin-top: 50px;
+  text-align: left;
+  right: 20px;
+  
+}
+
+.team_container {
+  margin-top: 100px; /* Adjust the margin as needed to separate it from the navbar */
+  
+}
+
+/* Adjust other CSS styles as needed */
+
+.team_member i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #888; /* Set the color of the icon */
+  font-size: 20px; /* Adjust the font size of the icon */
+}
+body {
+  background: #f7f7f7;
+}
+
+.wrapper {
+  margin-top: -80px;
+  text-align: left;
+}
+
+/* Apply hover effect to active team members */
+.team_member.active:hover {
+  background-color: #89bc47; /* Replace 'your_hover_color' with the desired background color */
+  border-radius: 30px;
+    position: relative;
+    padding: 5px; /* Adjust the padding as needed */
+    right: 5px; 
+  }
+
+  .paragraph-with-icon i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #888;
+    font-size: 20px;
+  }
+
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Center vertically */
+  height: 40vh; /* Adjust this value as needed for the desired height */
+  
+}
+.logo-container img {
+  width: 100px; /* Set the desired width */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 50%;
+}
+.wrapper h1 {
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.our_team .team_member {
+  width: 100%; /* Set the width to 100% to make them stack vertically */
+  margin: 5px;
+  background: #fff;
+  padding: 20px 10px;
+  clear: both; /* Use clear to start each element on a new line */
+
+}
+.logo{
+  border-radius: 10%;
+  height: 5%;
+  width: 5%;  
+  
+}
+.our_team .team_member .member_img {
+   background: #e9e5fa;
+  max-width: 190px;
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  float: left;
+  border-radius: 10px; /* Adjust the border-radius to control the corner roundness */
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.our_team .team_member .member_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.our_team .team_member h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  margin: 15px 0 0px;
+}
+
+.our_team .team_member span {
+  font-size: 10px;
+}
+
+.our_team .team_member p {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  
+}
+
+
+
+.our_team .team_member .member_img .social_media .item {
+  margin: 0 10px;
+}
+
+.our_team .team_member .member_img .social_media .fab {
+  color: #8c7ae6;
+  font-size: 20px;
+}
+
+.our_team .team_member .member_img:hover .social_media {
+  transform: scale(1);
+}
+
+
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Center vertically */
+  height: 40vh; /* Adjust this value as needed for the desired height */
+}
+.logo-container img {
+  width: 100px; /* Set the desired width */
+  height: auto; /* Maintain the aspect ratio */
+}
+/*.wrapper h1 {
+  font-family: font-family: Arial, sans-serif;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 25px;
+}*/
+
+.our_team .team_member {
+  width: 100%; /* Set the width to 100% to make them stack vertically */
+  margin: 5px;
+  background: #fff;
+  padding: 20px 10px;
+  clear: both; /* Use clear to start each element on a new line */
+}
+.logo{
+  border-radius: 10%;
+  height: 5%;
+  width: 5%;  
+  
+}
+.our_team .team_member .member_img {
+  background: #e9e5fa;
+  max-width: 190px;
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  float: left;
+  border-radius: 75%;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.our_team .team_member .member_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.our_team .team_member h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  margin: 15px 0 0px;
+}
+
+.our_team .team_member span {
+  font-size: 10px;
+}
+
+.our_team .team_member p {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  
+}
+
+.our_team .team_member .member_img .social_media {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: rgba(0, 0, 0, 0.65);
+  width: 35%;
+  height: 35%;
+  border-radius: 75%;
+  display: inline;
+  justify-content: left;
+  align-items: left;
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+.our_team .team_member .member_img .social_media .item {
+  margin: 0 10px;
+}
+
+.our_team .team_member .member_img .social_media .fab {
+  color: #8c7ae6;
+  font-size: 20px;
+}
+
+.our_team .team_member .member_img:hover .social_media {
+  transform: scale(1);
+}
+
+.team_member .member_info {
+  position: relative;
+  padding-right: 40px; /* Adjust the padding as needed */
+}
+.team_member .member_info h1 {
+  color: black;
+  font-size: 1.6rem;
+  display: inline; /* Add this line to make it an inline element */
+}
+
+.team_member .member_info p {
+  text-align: right;
+  padding-right: 20px;
+  display: inline; /* Add this line to make it an inline element */
+  font-size: 1rem;;
+}
+
+/* Style the icon */
+.team_member .member_info i {
+  position: absolute;
+  top: 50%; /* Vertically align the icon to the middle */
+  right: 30px;
+  transform: translateY(-50%);
+  color: #1148ad;; /* Set the color of the icon */
+  font-size: 20px; /* Adjust the font size of the icon */
+}
+
+.second-line {
+  
+  font-size: 50px; /* Change the font size if needed */
+
+}

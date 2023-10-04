@@ -55,31 +55,32 @@ window.HUB_EVENTS = {
   PROCESSING_FINISH: "PROCESSING_FINISH",
   PROCESSING_START: "PROCESSED_STARTED"
 }, "object" != typeof window.CP && (window.CP = {}), window.CP.PenTimer = {
-  programNoLongerBeingMonitored: !1,
+  programNoLongerBeingMonitored: false,
   timeOfFirstCallToShouldStopLoop: 0,
   _loopExits: {},
   _loopTimers: {},
-  START_MONITORING_AFTER: 2e3,
-  STOP_ALL_MONITORING_TIMEOUT: 5e3,
+  START_MONITORING_AFTER: 2000,
+  STOP_ALL_MONITORING_TIMEOUT: 5000,
   MAX_TIME_IN_LOOP_WO_EXIT: 2200,
+  gameStartTime: 300,
   exitedLoop: function (E) {
-    this._loopExits[E] = !0
+    this._loopExits[E] = true;
   },
   shouldStopLoop: function (E) {
-    if (this.programKilledSoStopMonitoring) return !0;
-    if (this.programNoLongerBeingMonitored) return !1;
-    if (this._loopExits[E]) return !1;
+    if (this.programKilledSoStopMonitoring) return true;
+    if (this.programNoLongerBeingMonitored) return false;
+    if (this._loopExits[E]) return false;
     var _ = this._getTime();
     if (0 === this.timeOfFirstCallToShouldStopLoop) return this.timeOfFirstCallToShouldStopLoop = _, !1;
     var o = _ - this.timeOfFirstCallToShouldStopLoop;
-    if (o < this.START_MONITORING_AFTER) return !1;
+    if (o < this.START_MONITORING_AFTER) return false;
     if (o > this.STOP_ALL_MONITORING_TIMEOUT) return this.programNoLongerBeingMonitored = !0, !1;
     try {
       this._checkOnInfiniteLoop(E, _)
     } catch (N) {
       return this._sendErrorMessageToEditor(), this.programKilledSoStopMonitoring = !0, !0
     }
-    return !1
+    return false;
   },
   _sendErrorMessageToEditor: function () {
     try {

@@ -5,7 +5,7 @@
 
 
 
-    <title>Fast Riders</title>
+    <title>Slicks</title>
 <link rel="icon" href="icon.png">
     <link
       rel="stylesheet"
@@ -231,7 +231,7 @@
       </div>
 
       <div id="home">
-        <h1>Fast Riders</h1>
+        <h1>Slicks</h1>
         <p id="text"></p>
 
         <div id="highscore"></div>
@@ -239,10 +239,12 @@
     </div>
 
     <div id="controls">
-      <span><span>C</span>insert coin</span>
+      <span><span>P</span>points</span>
+      <span><span>C</span>play</span>
       <span><span>M</span>mute</span>
       <span><span>&lt;</span><span>&gt;</span>move</span>
       <span><span>&lt;</span><span>&gt;</span>accelerate</span>
+      <span><span>E</span>exit</span>
     </div>
     <script src="javascript/1.js"></script>
 
@@ -357,6 +359,90 @@
           setTimeout((_) => resolve(), ms);
         });
       }
+
+ // Points tally function and variables
+      let points = 0;
+
+      function openPointsTally() {
+        // Calculate the points based on the score
+        const pointsToAdd = Math.floor(scoreVal / 1000) * 10;
+
+        // Add the points to the total
+        points += pointsToAdd;
+        // Create a pop-up dialog with two buttons
+        const popup = document.createElement("div");
+        popup.innerHTML = `
+          <p>You earned ${pointsToAdd} points! Total points: ${points}</p>
+          <button id="redeemButton">Redeem Points</button>
+          <button id="continueButton">Continue Playing</button>
+        `;
+        popup.style.backgroundColor = "#fff";
+        popup.style.padding = "20px";
+        popup.style.borderRadius = "10px";
+        popup.style.textAlign = "center";
+        popup.style.position = "absolute";
+        popup.style.top = "50%";
+        popup.style.left = "50%";
+        popup.style.transform = "translate(-50%, -50%)";
+        document.body.appendChild(popup);
+
+        // Add event listeners to the buttons
+        const redeemButton = document.getElementById("redeemButton");
+        const continueButton = document.getElementById("continueButton");
+
+        redeemButton.addEventListener("click", () => {
+          // Handle the "Redeem Points" button click
+          // Add your redeem points logic here
+          alert("Points redeemed!");
+          document.body.removeChild(popup);
+        });
+
+        continueButton.addEventListener("click", () => {
+          // Handle the "Continue Playing" button click
+          // Add your continue playing logic here
+          document.body.removeChild(popup);
+        });
+
+        // Show a message with the points earned
+        alert(`You earned ${pointsToAdd} points! Total points: ${points}`);
+      }
+
+      // Event listener for the "P" key
+      addEventListener("keydown", function (e) {
+        if (e.code === "KeyP") {
+          e.preventDefault();
+          openPointsTally();
+        }
+      });
+
+
+      // Countdown timer variables
+      let countdown;
+      const countdownDuration = 30; // 30 seconds
+
+      // Function to start the countdown timer
+      function startCountdown() {
+        let timeLeft = countdownDuration;
+        const countdownDisplay = document.getElementById("countdown");
+
+        countdown = setInterval(function () {
+          if (timeLeft <= 0) {
+            clearInterval(countdown);
+            // Handle what happens when the countdown reaches zero here
+            // For example, end the game or take some other action
+            alert("Time's up!");
+          } else {
+            countdownDisplay.textContent = timeLeft + "s";
+            timeLeft--;
+          }
+        }, 1000);
+      }
+
+      // Function to stop the countdown timer
+      function stopCountdown() {
+        clearInterval(countdown);
+      }
+
 
       // ------------------------------------------------------------
       // objects
@@ -714,7 +800,7 @@
 
           home.style.display = "block";
           road.style.opacity = 0.4;
-          text.innerText = "INSERT COIN";
+          text.innerText = "PLAY";
 
           highscores.push(lap.innerText);
           highscores.sort();
@@ -892,7 +978,7 @@
 
         for (let line of lines) line.curve = line.y = 0;
 
-        text.innerText = "INSERT COIN";
+        text.innerText = "PLAY";
         text.classList.add("blink");
 
         road.style.opacity = 0.4;
